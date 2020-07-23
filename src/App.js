@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
-import ActionButtons from './components/ActionButtons';
 
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
     <div className="App">
       <Header />
       <TodoList />
-      
     </div>
   );
 }

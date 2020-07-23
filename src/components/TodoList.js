@@ -1,7 +1,6 @@
 import React, { useReducer, useState } from 'react'
 import Todo from './Todo'
 import { todoListReducer, initialTodoList } from '../reducers/todoListReducer';
-import { initialTodo, todoReducer} from '../reducers/todoReducer'
 import ActionButtons from './ActionButtons';
 import { useStyles } from '../utilities/useStyles';
 import { Grid } from '@material-ui/core';

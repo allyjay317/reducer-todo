@@ -11,12 +11,10 @@ export const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   cardTitle: {
-    fontSize: 14,
     padding: '10px',
     fontSize: '2rem',
   },
   cardTitleCompleted: {
-    fontSize: 14,
     padding: '10px',
     fontSize: '2rem',
     textDecoration: 'line-through'
@@ -34,6 +32,6 @@ export const useStyles = makeStyles((theme) => ({
     maxWidth: '500px'
   },
   cardSubtitle:{
-    fontSize: 12
+    fontSize: ".7rem"
   },
 }));

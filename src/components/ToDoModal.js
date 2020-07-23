@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Modal, Card, CardContent, TextField, CardActions, Button, Grid, Chip, CardHeader, Input } from '@material-ui/core'
+import { Modal, Card, CardContent, TextField, CardActions, Button, Grid, Chip, Input } from '@material-ui/core'
 import { useForm } from '../hooks/useForm'
 import { useStyles } from '../utilities/useStyles'
 import { initialTodo, todoReducer } from '../reducers/todoReducer'
