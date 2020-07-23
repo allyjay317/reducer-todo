@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 
-export const useForm = (object, submit) =>{
-    const [data, setData] = useState(object)
+export const useForm = (object, submit, reducer) =>{
+    const [data, dispatchData] = useReducer(reducer, object)
 
     const onSubmit = (e) =>{
         e.preventDefault()
         submit(data)
-        setData(object)
+        dispatchData({type: 'RESET'})
     }
 
     const onChange = e =>{
-        setData({
-            ...data,
-            [e.target.name]: e.target.value
-        })
+        dispatchData({type: 'UPDATE', data: {name: e.target.name, value: e.target.value}})
     }
 
-    return [data, onSubmit, onChange]
+    return [data, onSubmit, onChange, dispatchData]
 }

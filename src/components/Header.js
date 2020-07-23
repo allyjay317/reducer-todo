@@ -1,8 +1,18 @@
 import React from 'react'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
+import { useStyles } from '../utilities/useStyles'
+
 
 const Header = () => {
+    const classes= useStyles()
     return (
-        <div></div>
+        <AppBar>
+            <Toolbar>
+                <Typography variant="h6" className={classes.title}>
+                    Things I have to do
+                </Typography>
+            </Toolbar>
+        </AppBar>
     )
 }
 
