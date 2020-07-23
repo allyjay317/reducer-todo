@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Modal, Card, CardContent, TextField, CardActions, Button, Grid, Chip, Input } from '@material-ui/core'
+import { Modal, Card, CardContent, TextField, CardActions, Button, Grid, Chip, Input, Fade } from '@material-ui/core'
 import { useForm } from '../hooks/useForm'
 import { useStyles } from '../utilities/useStyles'
 import { initialTodo, todoReducer } from '../reducers/todoReducer'
@@ -39,59 +39,63 @@ const ToDoModal = (props) => {
         <Modal
             open={props.isOpen}
             onClose={props.close}
+            className={classes.modal}
+            border={0}
         >
-            <Card className={classes.todoModal}>
-                <CardContent>
-                    
-                    <form onSubmit={submitTodo}>
-                        <TextField 
-                            inputRef={(input) => setFocus(input)}
-                            id='standard-size-small'
-                            size='small' 
-                            label='New Task' 
-                            defaultValue='Enter Task Here' 
-                            value={todo.item} 
-                            name='item' 
-                            onChange={handleTodo}
-                        />
-                     </form>
-                    <Grid container>
-                        {todo.tags.map((tag, index) =>{
-                            return <Grid item>
-                                <Chip
-                                    label={tag.name}
-                                    onDelete={() => dispatchTodo({type: 'DELETE-TAG', index: index})}
-                                />
-                                </Grid>
-                        })}
-                        <Grid item>
-                        {addTag ? (
-                            <form onSubmit={submitNewTag}>
-                                <Chip label={
-                                    <Input
-                                        inputRef={(input) => setFocus(input)}
-                                        id='standard-required'
-                                        label='New Tag'
-                                        defaultValue='Enter new Tag'
-                                        value={newTag.name}
-                                        name='name'
-                                        onChange={handleNewTag} />
-                                } />
-                            </form>) : (
-                                <Chip label='Add new Tag' onClick={() => setAddTag(true)}/>
-                            )
-                        }
+            <Fade in={props.isOpen}>
+                <Card className={classes.todoModal} border={0}>
+                    <CardContent>
+                        
+                        <form onSubmit={submitTodo}>
+                            <TextField 
+                                inputRef={(input) => setFocus(input)}
+                                id='standard-size-small'
+                                size='small' 
+                                label='New Task' 
+                                defaultValue='Enter Task Here' 
+                                value={todo.item} 
+                                name='item' 
+                                onChange={handleTodo}
+                            />
+                         </form>
+                        <Grid container>
+                            {todo.tags.map((tag, index) =>{
+                                return <Grid item>
+                                    <Chip
+                                        label={tag.name}
+                                        onDelete={() => dispatchTodo({type: 'DELETE-TAG', index: index})}
+                                    />
+                                    </Grid>
+                            })}
+                            <Grid item>
+                            {addTag ? (
+                                <form onSubmit={submitNewTag}>
+                                    <Chip label={
+                                        <Input
+                                            inputRef={(input) => setFocus(input)}
+                                            id='standard-required'
+                                            label='New Tag'
+                                            defaultValue='Enter new Tag'
+                                            value={newTag.name}
+                                            name='name'
+                                            onChange={handleNewTag} />
+                                    } />
+                                </form>) : (
+                                    <Chip label='Add new Tag' onClick={() => setAddTag(true)}/>
+                                )
+                            }
+                                
+                            </Grid>
                             
                         </Grid>
-                        
-                    </Grid>
-                        <CardActions>
-                            <Button size='small' onClick={submitTodo}>Add New Task</Button>
-                        </CardActions>
-                        
-                   
-                </CardContent>
-            </Card>
+                            <CardActions>
+                                <Button size='small' onClick={submitTodo}>Add New Task</Button>
+                            </CardActions>
+                            
+                       
+                    </CardContent>
+                </Card>
+            </Fade>
         </Modal>
     )
 }

@@ -42,6 +42,15 @@ export const useStyles = makeStyles((theme) => ({
     padding: '10px',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)'
-},
+    transform: 'translate(-50%, -50%)',
+    boxShadow: theme.shadows[5],
+    border: 'none',
+  },
+  modal:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: 'none'
+  },
+
 }));
