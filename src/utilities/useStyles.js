@@ -34,4 +34,14 @@ export const useStyles = makeStyles((theme) => ({
   cardSubtitle:{
     fontSize: ".7rem"
   },
+  todoModal:{
+    position: 'absolute',
+    width: 400,
+    backgroundColor: 'whitesmoke',
+    border: '2px solid #000',
+    padding: '10px',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+},
 }));

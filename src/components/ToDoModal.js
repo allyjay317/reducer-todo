@@ -40,7 +40,7 @@ const ToDoModal = (props) => {
             open={props.isOpen}
             onClose={props.close}
         >
-            <Card className={classes.todoForm}>
+            <Card className={classes.todoModal}>
                 <CardContent>
                     
                     <form onSubmit={submitTodo}>

@@ -13,7 +13,8 @@ const TodoList = (props) => {
     const classes = useStyles()
     return (
         <Grid
-            container 
+            container
+            justify='center'
             className={classes.todoContainer}
         >
             {todos.map(todo =>{
