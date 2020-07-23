@@ -8,7 +8,7 @@ import ToDoModal from './ToDoModal';
 
 const TodoList = (props) => {
     const [todos, dispatchTodos] = useReducer(todoListReducer, initialTodoList)
-    
+
     const [addOpen, setAddOpen] = useState(false)
     const classes = useStyles()
     return (
@@ -17,26 +17,26 @@ const TodoList = (props) => {
             justify='center'
             className={classes.todoContainer}
         >
-            {todos.map(todo =>{
+            {todos.map(todo => {
                 return <Todo data={todo} onClick={e => {
-                    dispatchTodos({type: 'COMPLETE-TODO', id:todo.id})
-                }}/>
+                    dispatchTodos({ type: 'COMPLETE-TODO', id: todo.id })
+                }} />
             })}
-            <ActionButtons 
+            <ActionButtons
                 add={
                     () => setAddOpen(true)
-                } 
+                }
                 clear={
-                    () => dispatchTodos({type: 'CLEAR-TODO'})
+                    () => dispatchTodos({ type: 'CLEAR-TODO' })
                 }
             />
-            <ToDoModal 
-                isOpen={addOpen} 
+            <ToDoModal
+                isOpen={addOpen}
                 close={
                     () => setAddOpen(false)
-                } 
+                }
                 add={
-                    (newTask) => dispatchTodos({type: 'ADD-TODO', newTask: newTask})
+                    (newTask) => dispatchTodos({ type: 'ADD-TODO', newTask: newTask })
                 }
             />
         </Grid>

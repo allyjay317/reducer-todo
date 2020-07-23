@@ -19,26 +19,25 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     textDecoration: 'line-through'
   },
-  ActionButtons:{
-    position: 'fixed', 
-    bottom: '10px', 
+  ActionButtons: {
+    position: 'fixed',
+    bottom: '10px',
     right: '10px'
   },
-  todoContainer:{
+  todoContainer: {
     marginTop: '100px'
   },
-  todo:{
+  todo: {
     margin: theme.spacing(3),
     maxWidth: '500px'
   },
-  cardSubtitle:{
+  cardSubtitle: {
     fontSize: ".7rem"
   },
-  todoModal:{
+  todoModal: {
     position: 'absolute',
     width: 400,
     backgroundColor: 'whitesmoke',
-    border: '2px solid #000',
     padding: '10px',
     top: '50%',
     left: '50%',
@@ -46,7 +45,7 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     border: 'none',
   },
-  modal:{
+  modal: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

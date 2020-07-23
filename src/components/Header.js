@@ -4,7 +4,7 @@ import { useStyles } from '../utilities/useStyles'
 
 
 const Header = () => {
-    const classes= useStyles()
+    const classes = useStyles()
     return (
         <AppBar>
             <Toolbar>

@@ -9,14 +9,14 @@ const ActionButtons = (props) => {
     return (
         <Grid
             container
-            direction='row' 
+            direction='row'
             justify='flex-end'
             alignItems='center'
             spacing={3}
             className={classes.ActionButtons}
         >
             <Grid item>
-                <Fab color='primary' aria-label='add'  onClick={props.add}>
+                <Fab color='primary' aria-label='add' onClick={props.add}>
                     <AddIcon />
                 </Fab>
             </Grid>

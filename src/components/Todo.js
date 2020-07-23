@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, Typography, Grid, Chip } from '@material-ui/core'
 import { useStyles } from '../utilities/useStyles'
 import Moment from 'react-moment'
+import TagContainer from './TagContainer'
 
 const Todo = (props) => {
     const classes = useStyles()
@@ -13,10 +14,7 @@ const Todo = (props) => {
                         {props.data.item}
                     </Typography>
                     <Grid container>
-                        {props.data.tags.map(tag =>
-                            <Chip
-                                label={tag.name} />
-                        )}
+                        <TagContainer tags={props.data.tags} />
                     </Grid>
                     <Typography className={classes.cardSubtitle} color='textSecondary'>
                         Created on

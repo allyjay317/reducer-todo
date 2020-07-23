@@ -2,8 +2,8 @@ export const initialTag = {
     name: '',
 }
 
-export const tagReducer = (state, action) =>{
-    switch(action.type){
+export const tagReducer = (state, action) => {
+    switch (action.type) {
         case 'RESET':
             return initialTag
         case 'UPDATE':
